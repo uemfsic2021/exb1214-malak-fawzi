@@ -1,7 +1,13 @@
 public class Palindrome{
-    public static boolean is_palindrome(String s)
+    public static boolean is_palindrome(String s, int start, int end){
+    if ((end - start) < 2)
     {
-        // add your code here
         return true;
     }
+    if (s.charAt(start) != s.charAt(end))
+    {
+        return false;
+    }
+    return is_palindrome(s, ++start, --end);
+  }
 }
